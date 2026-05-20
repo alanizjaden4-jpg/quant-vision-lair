@@ -1,26 +1,41 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/landing/Navbar";
+import { Hero } from "@/components/landing/Hero";
+import { Ticker } from "@/components/landing/Ticker";
+import { Features } from "@/components/landing/Features";
+import { LiveStreamPreview } from "@/components/landing/LiveStreamPreview";
+import { Community } from "@/components/landing/Community";
+import { Pricing } from "@/components/landing/Pricing";
+import { Testimonials } from "@/components/landing/Testimonials";
+import { CTA } from "@/components/landing/CTA";
+import { Footer } from "@/components/landing/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Quantdev — Trade Live With Real-Time Market Insight" },
+      { name: "description", content: "A private live trading community with real-time streams, market discussions, and institutional-grade analysis from elite traders." },
+      { property: "og:title", content: "Quantdev — Live Trading Community" },
+      { property: "og:description", content: "Premium trading Discord with integrated live streaming. Join 12,000+ traders." },
+      { property: "og:type", content: "website" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Navbar />
+      <Hero />
+      <Ticker />
+      <Features />
+      <LiveStreamPreview />
+      <Community />
+      <Pricing />
+      <Testimonials />
+      <CTA />
+      <Footer />
+    </main>
+  );
 }

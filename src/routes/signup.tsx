@@ -28,7 +28,7 @@ const planMeta: Record<PlanId, { name: string; tag: string }> = {
 function SignupPage() {
   const { plan } = Route.useSearch();
   const navigate = useNavigate();
-  const meta = planMeta[plan];
+  const meta = planMeta[plan as PlanId];
   const [loading, setLoading] = useState(false);
 
   const onSubmit = (e: FormEvent) => {

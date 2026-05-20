@@ -23,12 +23,12 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          <button className="hidden sm:inline-flex text-sm px-4 py-2 rounded-lg text-muted-foreground hover:text-foreground transition">
+          <Link to="/signup" className="hidden sm:inline-flex text-sm px-4 py-2 rounded-lg text-muted-foreground hover:text-foreground transition">
             Sign in
-          </button>
-          <button className="relative inline-flex items-center gap-2 text-sm px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-neon-blue text-primary-foreground font-medium glow-hover">
+          </Link>
+          <Link to="/pricing" className="relative inline-flex items-center gap-2 text-sm px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-neon-blue text-primary-foreground font-medium glow-hover">
             Join Now
-          </button>
+          </Link>
         </div>
       </nav>
     </header>

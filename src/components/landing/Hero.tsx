@@ -1,16 +1,14 @@
-import { ArrowRight, Play, TrendingUp, Users, Zap } from "lucide-react";
+import { ArrowRight, Play, TrendingUp, Users, Zap, Activity } from "lucide-react";
 
 export function Hero() {
   return (
     <section className="relative pt-40 pb-24 overflow-hidden">
-      {/* animated gradient bg */}
       <div className="absolute inset-0 grid-bg pointer-events-none" />
       <div
         className="absolute inset-0 pointer-events-none animate-gradient"
         style={{ background: "var(--gradient-hero)" }}
       />
 
-      {/* floating orbs */}
       <div className="absolute top-32 left-10 h-72 w-72 rounded-full bg-primary/30 blur-3xl animate-float" />
       <div className="absolute top-20 right-10 h-96 w-96 rounded-full bg-neon-blue/20 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
 
@@ -41,7 +39,6 @@ export function Hero() {
           </button>
         </div>
 
-        {/* live metrics */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
           {[
             { icon: Users, label: "Active Traders", value: "12,480+" },
@@ -60,6 +57,3 @@ export function Hero() {
     </section>
   );
 }
-
-// fix: import Activity icon used above
-import { Activity } from "lucide-react";

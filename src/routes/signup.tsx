@@ -5,9 +5,11 @@ import { useState, type FormEvent } from "react";
 type PlanId = "free" | "premium" | "elite";
 
 export const Route = createFileRoute("/signup")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    plan: (search.plan as PlanId) || "free",
-  }),
+  validateSearch: (search: Record<string, unknown>): { plan: PlanId } => {
+    const p = search.plan;
+    const plan: PlanId = p === "premium" || p === "elite" ? p : "free";
+    return { plan };
+  },
   head: () => ({
     meta: [
       { title: "Create your account — Quantdev" },
